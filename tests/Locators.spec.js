@@ -9,18 +9,9 @@ test('Browser Context Playwright test', async function({browser})
         // Page Initializaiton
         const page = await context.newPage();
         await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
+        console.log(await page.title())
+
+        // CSS Xpath Locators
+        page.locator()
         
-});
-
-
-// With Out Declaration and using only to skip other declared test cases
-test.only('Page Playwright test', async function({page}) 
-{
-
-    await page.goto("https://google.com")
-    // Print title
-    console.log(await page.title());
-    // Assert Title through the use of expect (Await)
-    await expect(page).toHaveTitle("Google")
-
 });

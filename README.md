@@ -34,8 +34,32 @@ Playwright Automation Framework Navigation.
 Automating WebApps Using Playwright 
 
 ###  :electric_plug: Installation
-- Steps on Playwright installtion and Test Run
+- Command for Playwright installtion 
 
+###  :package: Installing PlayWright
+- Installation Procedure Playwright
+```
+npm install playwright 
+
+```
+###  :package: Running Playwright Test in Headed Mode 
+- Playwright Test Runner Command
+```
+npx playwright test tests/UIBasicstests.spec.js --headed
+
+```
+###  :package: Review Test Run Reports
+- Playwright Run Report Review
+```
+npx playwright show-report
+
+```
+###  :package: Test Run on Singular Platform Browser [projcet = firefox, webkit]
+- Browser Declaration
+```
+npx playwright test tests/UIBasicstests.spec.js --project=chromium
+
+```
 ##  :wrench: Development
 If you want to colab please read through. 
 
@@ -135,7 +159,7 @@ After this, changes will be merged.
 - 
 
 ## :question: FYI
-- 
+- Use Await to maintain the async execution nature of javascript
 
 ##  :page_facing_up: Resources
 
