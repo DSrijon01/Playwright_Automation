@@ -1,7 +1,7 @@
 const{test, expect} = require('@playwright/test');
 
 // Async and Await concept 
-test('Browser Context Playwright test', async function({browser}) 
+test.only('Browser Context Playwright test', async function({browser}) 
 {
     
         // Browser initialization 
