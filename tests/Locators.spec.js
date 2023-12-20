@@ -45,13 +45,14 @@ test.only('Locators Specification Tests 2 carry forward', async function ({ brow
     // Remove the previously written password
     await passWord.fill("")
     // Push the password again
-    await passWord.fill("learning")
+    await passWord.fill("learning")/
     // Perform the Sign-in action
     await signIn.click();
     // Fetch the First element from the page - Using nth Method
     const check = console.log(await page.locator(".card-body a").nth(0).textContent());
     // Another Method using first second 
     const check_2 = console.log(await page.locator(".card-body a").first().textContent());
+    // assert if both of them fetched the same text or not 
     await expect(check).toEqual(check_2);
     
 

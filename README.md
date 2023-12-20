@@ -159,7 +159,8 @@ After this, changes will be merged.
 - 
 
 ## :question: FYI
-- Use Await to maintain the async execution nature of javascript
+- Use Await to maintain the async execution nature of javascript 
+- Changes made to the playwright.config.js -  from forbidOnly: !!process.env.CI, to forbidOnly: false, to check ci actions. 
 
 ##  :page_facing_up: Resources
 
