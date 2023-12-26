@@ -38,10 +38,6 @@ test.only('Locators Specification Tests 2 carry forward', async function ({ brow
     const passWord = page.locator("[type='password']")
     const signIn = page.locator("#signInBtn")
     const cardTitles = page.locator(".card-body a")
-    
-    
-
-    
 
     // To wipe out the previously written contents
     await userName.fill("");
@@ -57,6 +53,18 @@ test.only('Locators Specification Tests 2 carry forward', async function ({ brow
     await page.locator("select.form-control").selectOption("consult")
     // Handle Webbased Pop-up
     await page.locator("#okayBtn").click()
+    // Assertions - Radio Button
+    console.log(await page.locator(".radiotextsty").last().isChecked())
+    await expect(page.locator(".radiotextsty").last()).toBeChecked()
+    // Click and unclick the agreement
+    await page.locator("#terms").click()
+    // Assert it is clicked
+    await expect(page.locator("#terms")).toBeChecked();
+    // Uncheck
+    await page.locator("#terms").uncheck();
+    // Assertion (uncheck) - Agreement
+    expect(await page.locator("#terms").isChecked()).toBeFalsy()
+    
     // Perform the Sign-in action
     await signIn.click();
     // Use pause for playwright inspection
@@ -68,7 +76,6 @@ test.only('Locators Specification Tests 2 carry forward', async function ({ brow
     const check_2 = console.log(await page.locator(".card-body a").first().textContent());
     // assert if both of them fetched the same text or not 
     await expect(check).toEqual(check_2);
-    
     
     // Fetch all card titles to grab using allTextContent with synchronization
     const allTitles = await cardTitles.allTextContents();
