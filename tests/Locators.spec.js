@@ -37,6 +37,11 @@ test.only('Locators Specification Tests 2 carry forward', async function ({ brow
     const userName = page.locator("#username")
     const passWord = page.locator("[type='password']")
     const signIn = page.locator("#signInBtn")
+    const cardTitles = page.locator(".card-body a")
+    
+    
+
+    
 
     // To wipe out the previously written contents
     await userName.fill("");
@@ -45,9 +50,18 @@ test.only('Locators Specification Tests 2 carry forward', async function ({ brow
     // Remove the previously written password
     await passWord.fill("")
     // Push the password again
-    await passWord.fill("learning")/
+    await passWord.fill("learning")
+    // Radio Buttons
+    await page.locator('label.customradio:has-text("User") input[type="radio"]').click()
+    // Dropdown 
+    await page.locator("select.form-control").selectOption("consult")
+    // Handle Webbased Pop-up
+    await page.locator("#okayBtn").click()
     // Perform the Sign-in action
     await signIn.click();
+    // Use pause for playwright inspection
+    await page.pause()
+
     // Fetch the First element from the page - Using nth Method
     const check = console.log(await page.locator(".card-body a").nth(0).textContent());
     // Another Method using first second 
@@ -55,6 +69,15 @@ test.only('Locators Specification Tests 2 carry forward', async function ({ brow
     // assert if both of them fetched the same text or not 
     await expect(check).toEqual(check_2);
     
+    
+    // Fetch all card titles to grab using allTextContent with synchronization
+    const allTitles = await cardTitles.allTextContents();
+
+    // Print all titles
+    console.log(allTitles)
+
+
+
 
 });
 
