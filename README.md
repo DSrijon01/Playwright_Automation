@@ -66,6 +66,12 @@ npx playwright test tests/UIBasicstests.spec.js --project=chromium
 npx playwright test tests/window_handling.spec.js --project=chromium --headed --debug
 
 ```
+###  :package: Record and Generate Auto Code through codegen
+- Auto Code Generation
+```
+npx playwright codegen  https://managepd.eu/
+
+```
 ##  :wrench: Development
 If you want to colab please read through. 
 
