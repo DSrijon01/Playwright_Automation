@@ -60,6 +60,12 @@ npx playwright show-report
 npx playwright test tests/UIBasicstests.spec.js --project=chromium
 
 ```
+###  :package: Run in step by step Debug Mode
+- Browser Declaration
+```
+npx playwright test tests/window_handling.spec.js --project=chromium --headed --debug
+
+```
 ##  :wrench: Development
 If you want to colab please read through. 
 
