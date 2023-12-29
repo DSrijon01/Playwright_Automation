@@ -19,21 +19,22 @@ test('test', async ({ page }) => {
   await page.locator('input[name="coupon"]').click();
   await page.locator('input[name="coupon"]').fill('BS');
   await page.getByRole('button', { name: 'Apply Coupon' }).click();
-  // WorkAround
+  
   await page.click('input[type="text"]');
   await page.locator("[placeholder*='Country']").pressSequentially("ind");
   await page.getByRole('button', { name: ' India' }).click();
-  const dropdown = page.locator(".ta-results");
-//   await dropdown.waitFor();
-  const optionsCount = await dropdown.locator("button").count();
-   for (let i = 0; i < optionsCount; ++i) {
-      const text = await dropdown.locator("button").nth(i).textContent();
-      if (text === " India") {
-         await dropdown.locator("button").nth(i).click();
-         break;
-      }
-   }
-   // Workaround
+ // WorkAround - Alternative
+//   const dropdown = page.locator(".ta-results");
+//   const optionsCount = await dropdown.locator("button").count();
+//    for (let i = 0; i < optionsCount; ++i) {
+//       const text = await dropdown.locator("button").nth(i).textContent();
+//       if (text === " India") {
+//          await dropdown.locator("button").nth(i).click();
+//          break;
+//       }
+//    }
+ // Workaround
   await page.getByText('Place Order').click();
   await page.getByRole('button', { name: 'Click To Download Order Details in CSV' }).click();
+
 });

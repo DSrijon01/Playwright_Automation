@@ -168,11 +168,12 @@ After this, changes will be merged.
 
 
 ### :exclamation: Issues I faced 
-- 
+- fill, pressSequentially 
 
 ## :question: FYI
 - Use Await to maintain the async execution nature of javascript 
 - Changes made to the playwright.config.js -  from forbidOnly: !!process.env.CI, to forbidOnly: false, to check ci actions. 
+- use pressSequentially when you need to go for a wait bound suggestion box or similar. 
 
 ##  :page_facing_up: Resources
 
