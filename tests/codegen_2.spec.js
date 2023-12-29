@@ -33,7 +33,7 @@ test('@Web Client App login', async ({ page }) => {
    expect(bool).toBeTruthy();
    await page.locator("text=Checkout").click();
  
-   await page.locator("[placeholder*='Country']").type("ind");
+   await page.locator("[placeholder*='Country']").pressSequentially("ind");
  
    const dropdown = page.locator(".ta-results");
    await dropdown.waitFor();
